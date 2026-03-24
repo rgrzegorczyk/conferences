@@ -1,17 +1,6 @@
 # Conference Presentations Repository
 
-Welcome to my conference presentations repository! This is a collection of materials from various tech conferences where I've had the privilege to speak. Each presentation is organized by year and includes slides, demos, and additional resources.
-
-## Repository Structure
-
-```
-YEAR/
-  PRESENTATION_TITLE/
-    - readme.md (presentation details and resources)
-    - slides (if publicly available)
-    - demo_movies/ (demo recordings)
-    - additional resources
-```
+Welcome to my conference presentations repository! This is a collection of materials from various tech conferences where I've had the privilege to speak. Each presentation is organized by year, conference and includes slides, demos, and additional resources.
 
 ## Available Presentations
 
@@ -20,9 +9,11 @@ YEAR/
   - Presented at KSCOPE 2025
   - Presented at AUSOUG 2025
 
-## About
-
-This repository serves as a central hub for all my conference presentations. Each presentation folder contains its own detailed README with specific instructions, resources, and materials related to that talk.
+### 2026
+- [Oracle SQLcl: The Free Tool Every PL/SQL and APEX Developer Needs](./2026/Oracle%20SQLcl%20The%20Free%20Tool%20Every%20PL%20SQL%20and%20APEX%20Developer%20Needs/)
+  - Presented at APEX World 2026 
+  - Presented at APEX Alpe Adria 2026 (future event)
+  - Presented at ASCEND 2026 (future event)
 
 ## Contact
 
