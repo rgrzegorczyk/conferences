@@ -1,0 +1,9 @@
+{
+    "chat.mcp.serverSampling": {
+        "CONFERENCES/.vscode/mcp.json: conference_mcp": {
+            "allowedModels": [
+                "copilot/auto"
+            ]
+        }
+    }
+}
