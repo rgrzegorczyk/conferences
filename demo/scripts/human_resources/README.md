@@ -54,18 +54,19 @@ Required access to `hr_install.sql`, `hr_create.sql`, `hr_populate.sql`, `hr_cod
 ## Install Instructions
 
 1. Connect as privileged user with rights to create another user (`SYSTEM`, `ADMIN`, etc.)
-2. Run the `hr_install.sql` script to create the `HR` (Human Resources) schema
+2. Run the `hr_install.sql` script to create the Human Resources sample schema
 3. You are prompted for:
+    1. `schema username` - press Enter for default `HR` or provide another name
     1. `password` - enter an Oracle Database compliant password
     2. `tablespace` - if you do not enter a tablespace, the default database tablespace is used
 
-**Note:** If the HR schema already exists, it is removed/dropped and 
-        a fresh HR schema is installed
+**Note:** If the selected schema already exists, it is removed/dropped and 
+        a fresh schema is installed
 
 ## Uninstall Instructions
 
 1. Connect as privileged user with rights to create another user (`SYSTEM`, `ADMIN`, etc.)
-2. Run the `hr_uninstall.sql ` script to remove the `HR` (Human Resources) schema
+2. Run the `hr_uninstall.sql ` script and enter the schema username you want to remove
 
 ## Notes
 
