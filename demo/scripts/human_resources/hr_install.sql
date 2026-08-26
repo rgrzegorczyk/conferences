@@ -87,14 +87,35 @@ rem =======================================================
 SPOOL hr_install.log
 
 rem =======================================================
+rem Accept and verify schema username
+rem =======================================================
+
+ACCEPT schema PROMPT 'Enter a schema username [HR]: ' DEFAULT 'HR'
+
+DECLARE
+   v_schema_name   VARCHAR2(128);
+BEGIN
+   IF '&schema' IS NULL THEN
+      RAISE_APPLICATION_ERROR(-20999, 'Error: the schema username is mandatory! Please specify a username!');
+   END IF;
+
+   v_schema_name := DBMS_ASSERT.SIMPLE_SQL_NAME('&schema');
+
+   IF v_schema_name IS NULL THEN
+      RAISE_APPLICATION_ERROR(-20996, 'Error: invalid schema username! Please specify a valid Oracle username.');
+   END IF;
+END;
+/
+
+rem =======================================================
 rem Accept and verify schema password
 rem =======================================================
 
-ACCEPT pass PROMPT 'Enter a password for the user HR: ' HIDE
+ACCEPT pass PROMPT 'Enter a password for the user &schema: ' HIDE
 
 BEGIN
    IF '&pass' IS NULL THEN
-      RAISE_APPLICATION_ERROR(-20999, 'Error: the HR password is mandatory! Please specify a password!');
+      RAISE_APPLICATION_ERROR(-20999, 'Error: the schema password is mandatory! Please specify a password!');
    END IF;
 END;
 /
@@ -106,7 +127,7 @@ rem =======================================================
 COLUMN property_value NEW_VALUE var_default_tablespace NOPRINT
 SELECT property_value FROM database_properties WHERE property_name = 'DEFAULT_PERMANENT_TABLESPACE';
 
-ACCEPT tbs PROMPT 'Enter a tablespace for HR [&var_default_tablespace]: ' DEFAULT '&var_default_tablespace'
+ACCEPT tbs PROMPT 'Enter a tablespace for &schema [&var_default_tablespace]: ' DEFAULT '&var_default_tablespace'
 
 DECLARE
    v_tbs_exists   NUMBER := 0;
@@ -128,16 +149,19 @@ ACCEPT overwrite_schema PROMPT 'Do you want to overwrite the schema, if it alrea
 
 SET SERVEROUTPUT ON;
 DECLARE
+   v_schema_name   VARCHAR2(128);
    v_user_exists   all_users.username%TYPE;
 BEGIN
+   v_schema_name := UPPER(DBMS_ASSERT.SIMPLE_SQL_NAME('&schema'));
+
    SELECT MAX(username) INTO v_user_exists
-      FROM all_users WHERE username = 'HR';
+      FROM all_users WHERE username = v_schema_name;
    -- Schema already exists
    IF v_user_exists IS NOT NULL THEN
       -- Overwrite schema if the user chose to do so
       IF UPPER('&overwrite_schema') = 'YES' THEN
-         EXECUTE IMMEDIATE 'DROP USER HR CASCADE';
-         DBMS_OUTPUT.PUT_LINE('Old HR schema has been dropped.');
+         EXECUTE IMMEDIATE 'DROP USER ' || v_schema_name || ' CASCADE';
+         DBMS_OUTPUT.PUT_LINE('Old ' || v_schema_name || ' schema has been dropped.');
       -- or raise error if the user doesn't want to overwrite it
       ELSE
          RAISE_APPLICATION_ERROR(-20997, 'Abort: the schema already exists and the user chose not to overwrite it.');
@@ -151,7 +175,7 @@ rem =======================================================
 rem create the HR schema user
 rem =======================================================
 
-CREATE USER hr IDENTIFIED BY "&pass"
+CREATE USER &schema IDENTIFIED BY "&pass"
                DEFAULT TABLESPACE &tbs
                QUOTA UNLIMITED ON &tbs;
 
@@ -164,9 +188,9 @@ GRANT CREATE MATERIALIZED VIEW,
       CREATE TRIGGER,
       CREATE TYPE,
       CREATE VIEW
-  TO hr;
+   TO &schema;
 
-ALTER SESSION SET CURRENT_SCHEMA=HR;
+ALTER SESSION SET CURRENT_SCHEMA=&schema;
 ALTER SESSION SET NLS_LANGUAGE=American;
 ALTER SESSION SET NLS_TERRITORY=America;
 
@@ -198,19 +222,19 @@ SET FEEDBACK OFF
 
 SELECT 'Verification:' AS "Installation verification" FROM dual;
 
-SELECT 'regions' AS "Table", 5 AS "provided", count(1) AS "actual" FROM hr.regions
+SELECT 'regions' AS "Table", 5 AS "provided", count(1) AS "actual" FROM regions
 UNION ALL
-SELECT 'countries' AS "Table", 25 AS "provided", count(1) AS "actual" FROM hr.countries
+SELECT 'countries' AS "Table", 25 AS "provided", count(1) AS "actual" FROM countries
 UNION ALL
-SELECT 'departments' AS "Table", 27 AS "provided", count(1) AS "actual" FROM hr.departments
+SELECT 'departments' AS "Table", 27 AS "provided", count(1) AS "actual" FROM departments
 UNION ALL
-SELECT 'locations' AS "Table", 23 AS "provided", count(1) AS "actual" FROM hr.locations
+SELECT 'locations' AS "Table", 23 AS "provided", count(1) AS "actual" FROM locations
 UNION ALL
-SELECT 'employees' AS "Table", 107 AS "provided", count(1) AS "actual" FROM hr.employees
+SELECT 'employees' AS "Table", 107 AS "provided", count(1) AS "actual" FROM employees
 UNION ALL
-SELECT 'jobs' AS "Table", 19 AS "provided", count(1) AS "actual" FROM hr.jobs
+SELECT 'jobs' AS "Table", 19 AS "provided", count(1) AS "actual" FROM jobs
 UNION ALL
-SELECT 'job_history' AS "Table", 10 AS "provided", count(1) AS "actual" FROM hr.job_history;
+SELECT 'job_history' AS "Table", 10 AS "provided", count(1) AS "actual" FROM job_history;
 
 rem
 rem Installation finish text.

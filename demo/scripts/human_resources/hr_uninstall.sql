@@ -56,23 +56,42 @@ SET ECHO OFF
 WHENEVER SQLERROR EXIT SQL.SQLCODE
 
 REM =======================================================
+REM Accept and verify schema username
+REM =======================================================
+
+ACCEPT schema PROMPT 'Enter a schema username to remove [HR]: ' DEFAULT 'HR'
+
+DECLARE
+   v_schema_name   VARCHAR2(128);
+BEGIN
+   IF '&schema' IS NULL THEN
+      RAISE_APPLICATION_ERROR(-20999, 'Error: the schema username is mandatory! Please specify a username!');
+   END IF;
+
+   v_schema_name := DBMS_ASSERT.SIMPLE_SQL_NAME('&schema');
+END;
+/
+
+REM =======================================================
 REM cleanup HR schema, if found
 REM Use PL/SQL to avoid "user does not exist" error
 REM =======================================================
 
 SET SERVEROUTPUT ON;
 DECLARE
+   v_schema_name       VARCHAR2(128);
    user_does_not_exist EXCEPTION;
    pragma exception_init(user_does_not_exist, -1918);
 BEGIN
-   EXECUTE IMMEDIATE 'DROP USER HR CASCADE';
+   v_schema_name := UPPER(DBMS_ASSERT.SIMPLE_SQL_NAME('&schema'));
+   EXECUTE IMMEDIATE 'DROP USER ' || v_schema_name || ' CASCADE';
    -- The next line will only be reached if the HR schema already exists.
    -- Otherwise the statement above will trigger an exception.
-   DBMS_OUTPUT.PUT_LINE('HR schema has been dropped.');
+   DBMS_OUTPUT.PUT_LINE(v_schema_name || ' schema has been dropped.');
 EXCEPTION
    WHEN user_does_not_exist THEN
       -- Ignore error as the user to be dropped does not exist anyway
-      DBMS_OUTPUT.PUT_LINE('HR schema does not exist, no actions performed.');
+      DBMS_OUTPUT.PUT_LINE(UPPER('&schema') || ' schema does not exist, no actions performed.');
 END;
 /
 SET SERVEROUTPUT OFF;
