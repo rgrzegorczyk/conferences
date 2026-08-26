@@ -1,11 +1,4 @@
 {
 	"inputs": [],
-	"servers": {
-		"conference_mcp": {
-			"type": "stdio",
-			"command": "/Users/rg/apps/oracle/sqlcl/bin/sql",
-			 "args": ["-R","1","-mcp"]
-			
-		}
-	}
+	"servers": {}
 }
