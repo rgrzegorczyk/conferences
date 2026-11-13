@@ -1,0 +1,1 @@
+Codescan examples working before SQLcl 26.3

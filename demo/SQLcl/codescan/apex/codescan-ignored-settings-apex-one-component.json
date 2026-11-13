@@ -1,0 +1,13 @@
+{
+  "ignore": [
+    {
+      "code": "G-4390",
+      "file": "shared-components/app-processes.apx",
+      "component": {
+        "type": "appProcess",
+        "id": "trim-all-page-items"
+      },
+      "reason": "The loop intentionally processes all page items without referencing the index; task: APP-1234; approved by: jdoe"
+    }
+  ]
+}

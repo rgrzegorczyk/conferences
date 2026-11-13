@@ -1,0 +1,1 @@
+COMMENT ON TABLE "ESQL_1220"  IS 'Data Pump Master Table EXPORT                         SCHEMA                        ';

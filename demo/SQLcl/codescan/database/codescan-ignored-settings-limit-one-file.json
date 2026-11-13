@@ -1,0 +1,9 @@
+{
+  "ignore": [
+    {
+      "code": "G-1050",
+      "file": "database/package_body/eba_demo_ir_pkg_package_body.sql",
+      "reason": "Approved legacy behavior"
+    }
+  ]
+}

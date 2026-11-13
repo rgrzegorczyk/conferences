@@ -1,0 +1,9 @@
+{
+  "ignore": [
+    {
+      "code": "APEX-009",
+      "file": "apex/sample-reporting/application.apx",
+      "reason": "Just like that"
+    }
+  ]
+}

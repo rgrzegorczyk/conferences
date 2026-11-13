@@ -1,0 +1,8 @@
+{
+  "app" : {
+    "id" : 103,
+    "databaseSession" : {
+      "parsingSchema" : "DEMO"
+    }
+  }
+}
