@@ -4,239 +4,244 @@
 
 8 distinct warnings
 
-- **APEX-002** (line 1, column 1) — target: app:SAMPLE-REPORTING: Non-public pages must have an authentication scheme and an authorization scheme at page or application scope.
-- **APEX-009** (line 1, column 1) — target: app:SAMPLE-REPORTING: Checksum protection is configured, but application session state protection is not enabled
-- **APEX-014** (line 1, column 1) — target: app:SAMPLE-REPORTING: Applications must disable frame embedding unless framing is required.
-- **APEX-024** (line 1, column 1) — target: app:SAMPLE-REPORTING: Applications require positive idle and absolute session limits
-- **APEX-025** (line 1, column 1) — target: app:SAMPLE-REPORTING: Applications and pages must disable session rejoin.
-- **APEX-026** (line 1, column 1) — target: app:SAMPLE-REPORTING: Pages must disable duplicate submissions.
-- **APEX-029** (line 1, column 1) — target: app:SAMPLE-REPORTING: Applications require a centralized error handling function
-- **APEX-031** (line 1, column 1) — target: app:SAMPLE-REPORTING: Applications require exact substitution matching
+- **APEX-002** (line 1, column 1) — component: app SAMPLE-REPORTING: Non-public pages must have an authentication scheme and an authorization scheme at page or application scope.
+- **APEX-009** (line 1, column 1) — component: app SAMPLE-REPORTING: Checksum protection is configured, but application session state protection is not enabled
+- **APEX-014** (line 1, column 1) — component: app SAMPLE-REPORTING: Applications must disable frame embedding unless framing is required.
+- **APEX-024** (line 1, column 1) — component: app SAMPLE-REPORTING: Applications require positive idle and absolute session limits
+- **APEX-025** (line 1, column 1) — component: app SAMPLE-REPORTING: Applications and pages must disable session rejoin.
+- **APEX-026** (line 1, column 1) — component: app SAMPLE-REPORTING: Pages must disable duplicate submissions.
+- **APEX-029** (line 1, column 1) — component: app SAMPLE-REPORTING: Applications require a centralized error handling function
+- **APEX-031** (line 1, column 1) — component: app SAMPLE-REPORTING: Applications require exact substitution matching
 
 #### apex/sample-reporting/pages/p00001-interactive-report.apx
 
 2 distinct warnings
 
-- **G-2190** (line 72, column 24) — target: app:SAMPLE-REPORTING/page:1/region:projects: Avoid using ROWID or UROWID.
-- **APEX-005** (line 868, column 5) — target: app:SAMPLE-REPORTING/page:1/dynamicAction:refresh-on-edit: Component dynamic actions require an authorization scheme
+- **G-2190** (line 72, column 24) — component: region projects; parent: page 1; parent: app SAMPLE-REPORTING; property: sqlQuery: Avoid using ROWID or UROWID.
+- **APEX-005** (line 868, column 5) — component: dynamicAction refresh-on-edit; parent: page 1; parent: app SAMPLE-REPORTING: Component dynamic actions require an authorization scheme
 
 #### apex/sample-reporting/pages/p00002-maintain-project.apx
 
 1 distinct warning
 
-- **APEX-005** (line 464, column 5) — target: app:SAMPLE-REPORTING/page:2/dynamicAction:cancel-modal: Component dynamic actions require an authorization scheme
+- **APEX-005** (line 464, column 5) — component: dynamicAction cancel-modal; parent: page 2; parent: app SAMPLE-REPORTING: Component dynamic actions require an authorization scheme
 
 #### apex/sample-reporting/pages/p00003-classic-report.apx
 
 3 distinct warnings
 
-- **G-2190** (line 90, column 24) — target: app:SAMPLE-REPORTING/page:3/region:classic-report: Avoid using ROWID or UROWID.
-- **G-1050** (line 101, column 46) — target: app:SAMPLE-REPORTING/page:3/region:classic-report: Avoid using literals in your code
-- **APEX-005** (line 356, column 5) — target: app:SAMPLE-REPORTING/page:3/dynamicAction:refresh-on-edit: Component dynamic actions require an authorization scheme
+- **G-2190** (line 90, column 24) — component: region classic-report; parent: page 3; parent: app SAMPLE-REPORTING; property: sqlQuery: Avoid using ROWID or UROWID.
+- **G-1050** (line 101, column 46) — component: region classic-report; parent: page 3; parent: app SAMPLE-REPORTING; property: sqlQuery: Avoid using literals in your code
+- **APEX-005** (line 356, column 5) — component: dynamicAction refresh-on-edit; parent: page 3; parent: app SAMPLE-REPORTING: Component dynamic actions require an authorization scheme
 
 #### apex/sample-reporting/pages/p00004-manage-sample-data.apx
 
 1 distinct warning
 
-- **G-1010** (line 134, column 17) — target: app:SAMPLE-REPORTING/page:4/process:reset-data: Try to label your sub blocks
+- **G-1010** (line 134, column 17) — component: process reset-data; parent: page 4; parent: app SAMPLE-REPORTING; property: plsqlCode: Try to label your sub blocks
 
 #### apex/sample-reporting/pages/p00005-filtering.apx
 
 8 distinct warnings
 
-- **G-2190** (line 81, column 24) — target: app:SAMPLE-REPORTING/page:5/region:filtered-data: Avoid using ROWID or UROWID.
-- **G-1050** (line 92, column 46) — target: app:SAMPLE-REPORTING/page:5/region:filtered-data: Avoid using literals in your code
-- **APEX-005** (line 381, column 5) — target: app:SAMPLE-REPORTING/page:5/pageItem:P5\_SEARCH: Component dynamic actions require an authorization scheme
-- **G-2185** (line 433, column 25) — target: app:SAMPLE-REPORTING/page:5/pageItem:P5\_STATUS: Avoid using overly short names for explicitly or implicitly declared identifiers
-- **G-2140** (line 433, column 44) — target: app:SAMPLE-REPORTING/page:5/pageItem:P5\_STATUS: Never initialize variables with NULL
-- **G-4320** (line 435, column 17) — target: app:SAMPLE-REPORTING/page:5/pageItem:P5\_STATUS: Always label your loops
-- **G-7420** (line 438, column 17) — target: app:SAMPLE-REPORTING/page:5/pageItem:P5\_STATUS: Always make the RETURN statement the last statement of your function
-- **APEX-005** (line 474, column 5) — target: app:SAMPLE-REPORTING/page:5/dynamicAction:submit-report-on-status-filter-change: Component dynamic actions require an authorization scheme
+- **G-2190** (line 81, column 24) — component: region filtered-data; parent: page 5; parent: app SAMPLE-REPORTING; property: sqlQuery: Avoid using ROWID or UROWID.
+- **G-1050** (line 92, column 46) — component: region filtered-data; parent: page 5; parent: app SAMPLE-REPORTING; property: sqlQuery: Avoid using literals in your code
+- **APEX-005** (line 381, column 5) — component: pageItem P5\_SEARCH; parent: page 5; parent: app SAMPLE-REPORTING: Component dynamic actions require an authorization scheme
+- **G-2185** (line 433, column 25) — component: pageItem P5\_STATUS; parent: page 5; parent: app SAMPLE-REPORTING; property: plsqlFunctionBody: Avoid using overly short names for explicitly or implicitly declared identifiers
+- **G-2140** (line 433, column 44) — component: pageItem P5\_STATUS; parent: page 5; parent: app SAMPLE-REPORTING; property: plsqlFunctionBody: Never initialize variables with NULL
+- **G-4320** (line 435, column 17) — component: pageItem P5\_STATUS; parent: page 5; parent: app SAMPLE-REPORTING; property: plsqlFunctionBody: Always label your loops
+- **G-7420** (line 438, column 17) — component: pageItem P5\_STATUS; parent: page 5; parent: app SAMPLE-REPORTING; property: plsqlFunctionBody: Always make the RETURN statement the last statement of your function
+- **APEX-005** (line 474, column 5) — component: dynamicAction submit-report-on-status-filter-change; parent: page 5; parent: app SAMPLE-REPORTING: Component dynamic actions require an authorization scheme
 
 #### apex/sample-reporting/pages/p00006-drill-down-ir.apx
 
 4 distinct warnings
 
-- **G-4220** (line 97, column 28) — target: app:SAMPLE-REPORTING/page:6/region:projects: Try to use CASE rather than DECODE
-- **G-4220** (line 98, column 28) — target: app:SAMPLE-REPORTING/page:6/region:projects: Try to use CASE rather than DECODE
-- **G-4220** (line 99, column 28) — target: app:SAMPLE-REPORTING/page:6/region:projects: Try to use CASE rather than DECODE
-- **G-4220** (line 100, column 28) — target: app:SAMPLE-REPORTING/page:6/region:projects: Try to use CASE rather than DECODE
+- **G-4220** (line 97, column 28) — component: region projects; parent: page 6; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use CASE rather than DECODE
+- **G-4220** (line 98, column 28) — component: region projects; parent: page 6; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use CASE rather than DECODE
+- **G-4220** (line 99, column 28) — component: region projects; parent: page 6; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use CASE rather than DECODE
+- **G-4220** (line 100, column 28) — component: region projects; parent: page 6; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use CASE rather than DECODE
 
 #### apex/sample-reporting/pages/p00007-highlighting.apx
 
 4 distinct warnings
 
-- **G-4220** (line 95, column 28) — target: app:SAMPLE-REPORTING/page:7/region:projects: Try to use CASE rather than DECODE
-- **G-4220** (line 96, column 28) — target: app:SAMPLE-REPORTING/page:7/region:projects: Try to use CASE rather than DECODE
-- **G-4220** (line 97, column 28) — target: app:SAMPLE-REPORTING/page:7/region:projects: Try to use CASE rather than DECODE
-- **G-4220** (line 98, column 28) — target: app:SAMPLE-REPORTING/page:7/region:projects: Try to use CASE rather than DECODE
+- **G-4220** (line 95, column 28) — component: region projects; parent: page 7; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use CASE rather than DECODE
+- **G-4220** (line 96, column 28) — component: region projects; parent: page 7; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use CASE rather than DECODE
+- **G-4220** (line 97, column 28) — component: region projects; parent: page 7; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use CASE rather than DECODE
+- **G-4220** (line 98, column 28) — component: region projects; parent: page 7; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use CASE rather than DECODE
 
 #### apex/sample-reporting/pages/p00008-format-masks.apx
 
 1 distinct warning
 
-- **G-3130** (line 95, column 22) — target: app:SAMPLE-REPORTING/page:8/region:format-mask-example-report: Try to use ANSI SQL-92 join syntax
+- **G-3130** (line 95, column 22) — component: region format-mask-example-report; parent: page 8; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use ANSI SQL-92 join syntax
 
 #### apex/sample-reporting/pages/p00011-interactive-report2.apx
 
 10 distinct warnings
 
-- **G-9020** (line 150, column 42) — target: app:SAMPLE-REPORTING/page:11/region:drill-down-donut-chart-based-on-user-s-interactive-report-filters/attributes:attributes/series:tasks: Try to use a format model and NLS\_NUMERIC\_CHARACTERS in string to number conversion functions
-- **G-9030** (line 150, column 42) — target: app:SAMPLE-REPORTING/page:11/region:drill-down-donut-chart-based-on-user-s-interactive-report-filters/attributes:attributes/series:tasks: Try to define a default value on conversion errors
-- **G-3180** (line 153, column 30) — target: app:SAMPLE-REPORTING/page:11/region:drill-down-donut-chart-based-on-user-s-interactive-report-filters/attributes:attributes/series:tasks: Always specify column names instead of positional references in ORDER BY clauses
-- **G-3180** (line 153, column 38) — target: app:SAMPLE-REPORTING/page:11/region:drill-down-donut-chart-based-on-user-s-interactive-report-filters/attributes:attributes/series:tasks: Always specify column names instead of positional references in ORDER BY clauses
-- **G-1010** (line 478, column 17) — target: app:SAMPLE-REPORTING/page:11/region:interactive-report-query-based-on-current-user-s-session: Try to label your sub blocks
-- **G-4320** (line 497, column 19) — target: app:SAMPLE-REPORTING/page:11/region:interactive-report-query-based-on-current-user-s-session: Always label your loops
-- **APEX-005** (line 602, column 5) — target: app:SAMPLE-REPORTING/page:11/dynamicAction:get-chart-data-from-ir-result: Component dynamic actions require an authorization scheme
-- **G-1010** (line 618, column 21) — target: app:SAMPLE-REPORTING/page:11/dynamicAction:get-chart-data-from-ir-result/action:native-execute-plsql-code: Try to label your sub blocks
-- **G-2185** (line 620, column 23) — target: app:SAMPLE-REPORTING/page:11/dynamicAction:get-chart-data-from-ir-result/action:native-execute-plsql-code: Avoid using overly short names for explicitly or implicitly declared identifiers
-- **G-4320** (line 638, column 23) — target: app:SAMPLE-REPORTING/page:11/dynamicAction:get-chart-data-from-ir-result/action:native-execute-plsql-code: Always label your loops
+- **G-9020** (line 150, column 42) — component: series tasks; parent: attributes attributes; parent: region drill-down-donut-chart-based-on-user-s-interactive-report-filters; parent: page 11; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use a format model and NLS\_NUMERIC\_CHARACTERS in string to number conversion functions
+- **G-9030** (line 150, column 42) — component: series tasks; parent: attributes attributes; parent: region drill-down-donut-chart-based-on-user-s-interactive-report-filters; parent: page 11; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to define a default value on conversion errors
+- **G-3180** (line 153, column 30) — component: series tasks; parent: attributes attributes; parent: region drill-down-donut-chart-based-on-user-s-interactive-report-filters; parent: page 11; parent: app SAMPLE-REPORTING; property: sqlQuery: Always specify column names instead of positional references in ORDER BY clauses
+- **G-3180** (line 153, column 38) — component: series tasks; parent: attributes attributes; parent: region drill-down-donut-chart-based-on-user-s-interactive-report-filters; parent: page 11; parent: app SAMPLE-REPORTING; property: sqlQuery: Always specify column names instead of positional references in ORDER BY clauses
+- **G-1010** (line 478, column 17) — component: region interactive-report-query-based-on-current-user-s-session; parent: page 11; parent: app SAMPLE-REPORTING; property: plsqlCode: Try to label your sub blocks
+- **G-4320** (line 497, column 19) — component: region interactive-report-query-based-on-current-user-s-session; parent: page 11; parent: app SAMPLE-REPORTING; property: plsqlCode: Always label your loops
+- **APEX-005** (line 602, column 5) — component: dynamicAction get-chart-data-from-ir-result; parent: page 11; parent: app SAMPLE-REPORTING: Component dynamic actions require an authorization scheme
+- **G-1010** (line 618, column 21) — component: action native-execute-plsql-code; parent: dynamicAction get-chart-data-from-ir-result; parent: page 11; parent: app SAMPLE-REPORTING; property: plsqlCode: Try to label your sub blocks
+- **G-2185** (line 620, column 23) — component: action native-execute-plsql-code; parent: dynamicAction get-chart-data-from-ir-result; parent: page 11; parent: app SAMPLE-REPORTING; property: plsqlCode: Avoid using overly short names for explicitly or implicitly declared identifiers
+- **G-4320** (line 638, column 23) — component: action native-execute-plsql-code; parent: dynamicAction get-chart-data-from-ir-result; parent: page 11; parent: app SAMPLE-REPORTING; property: plsqlCode: Always label your loops
 
 #### apex/sample-reporting/pages/p00013-non-tabular-templates.apx
 
 1 distinct warning
 
-- **G-1050** (line 98, column 47) — target: app:SAMPLE-REPORTING/page:13/region:comment-bubbles: Avoid using literals in your code
+- **G-1050** (line 98, column 47) — component: region comment-bubbles; parent: page 13; parent: app SAMPLE-REPORTING; property: sqlQuery: Avoid using literals in your code
 
 #### apex/sample-reporting/pages/p00015-bind-variables.apx
 
 5 distinct warnings
 
-- **G-4220** (line 112, column 28) — target: app:SAMPLE-REPORTING/page:15/region:projects: Try to use CASE rather than DECODE
-- **G-4220** (line 113, column 28) — target: app:SAMPLE-REPORTING/page:15/region:projects: Try to use CASE rather than DECODE
-- **G-4220** (line 114, column 28) — target: app:SAMPLE-REPORTING/page:15/region:projects: Try to use CASE rather than DECODE
-- **G-4220** (line 115, column 28) — target: app:SAMPLE-REPORTING/page:15/region:projects: Try to use CASE rather than DECODE
-- **G-1050** (line 121, column 47) — target: app:SAMPLE-REPORTING/page:15/region:projects: Avoid using literals in your code
+- **G-4220** (line 112, column 28) — component: region projects; parent: page 15; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use CASE rather than DECODE
+- **G-4220** (line 113, column 28) — component: region projects; parent: page 15; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use CASE rather than DECODE
+- **G-4220** (line 114, column 28) — component: region projects; parent: page 15; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use CASE rather than DECODE
+- **G-4220** (line 115, column 28) — component: region projects; parent: page 15; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use CASE rather than DECODE
+- **G-1050** (line 121, column 47) — component: region projects; parent: page 15; parent: app SAMPLE-REPORTING; property: sqlQuery: Avoid using literals in your code
 
 #### apex/sample-reporting/pages/p00017-interactive-grid.apx
 
 1 distinct warning
 
-- **G-2190** (line 66, column 24) — target: app:SAMPLE-REPORTING/page:17/region:projects: Avoid using ROWID or UROWID.
+- **G-2190** (line 66, column 24) — component: region projects; parent: page 17; parent: app SAMPLE-REPORTING; property: sqlQuery: Avoid using ROWID or UROWID.
 
 #### apex/sample-reporting/pages/p00018-linking-to-interactive-reports.apx
 
 2 distinct warnings
 
-- **G-1010** (line 431, column 17) — target: app:SAMPLE-REPORTING/page:18/region:interactive-report-query-based-on-current-user-s-session: Try to label your sub blocks
-- **G-4320** (line 449, column 19) — target: app:SAMPLE-REPORTING/page:18/region:interactive-report-query-based-on-current-user-s-session: Always label your loops
+- **G-1010** (line 431, column 17) — component: region interactive-report-query-based-on-current-user-s-session; parent: page 18; parent: app SAMPLE-REPORTING; property: plsqlCode: Try to label your sub blocks
+- **G-4320** (line 449, column 19) — component: region interactive-report-query-based-on-current-user-s-session; parent: page 18; parent: app SAMPLE-REPORTING; property: plsqlCode: Always label your loops
 
 #### apex/sample-reporting/pages/p00019-case-statement.apx
 
 3 distinct warnings
 
-- **G-2190** (line 77, column 125) — target: app:SAMPLE-REPORTING/page:19/region:case-statements: Avoid using ROWID or UROWID.
-- **G-1050** (line 87, column 43) — target: app:SAMPLE-REPORTING/page:19/region:case-statements: Avoid using literals in your code
-- **APEX-005** (line 430, column 5) — target: app:SAMPLE-REPORTING/page:19/dynamicAction:refresh-on-edit: Component dynamic actions require an authorization scheme
+- **G-2190** (line 77, column 125) — component: region case-statements; parent: page 19; parent: app SAMPLE-REPORTING; property: sqlQuery: Avoid using ROWID or UROWID.
+- **G-1050** (line 87, column 43) — component: region case-statements; parent: page 19; parent: app SAMPLE-REPORTING; property: sqlQuery: Avoid using literals in your code
+- **APEX-005** (line 430, column 5) — component: dynamicAction refresh-on-edit; parent: page 19; parent: app SAMPLE-REPORTING: Component dynamic actions require an authorization scheme
 
 #### apex/sample-reporting/pages/p00020-top-n-queries.apx
 
 1 distinct warning
 
-- **G-3145** (line 91, column 24) — target: app:SAMPLE-REPORTING/page:20/region:query: Avoid using SELECT \* directly from a table or view
+- **G-3145** (line 91, column 24) — component: region query; parent: page 20; parent: app SAMPLE-REPORTING; property: sqlQuery: Avoid using SELECT \* directly from a table or view
 
 #### apex/sample-reporting/pages/p00022-inline-views.apx
 
 2 distinct warnings
 
-- **G-3130** (line 107, column 22) — target: app:SAMPLE-REPORTING/page:22/region:inline-views: Try to use ANSI SQL-92 join syntax
-- **G-3120** (line 123, column 21) — target: app:SAMPLE-REPORTING/page:22/region:inline-views: Always use table aliases when your SQL statement involves more than one source
+- **G-3130** (line 107, column 22) — component: region inline-views; parent: page 22; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use ANSI SQL-92 join syntax
+- **G-3120** (line 123, column 21) — component: region inline-views; parent: page 22; parent: app SAMPLE-REPORTING; property: sqlQuery: Always use table aliases when your SQL statement involves more than one source
 
 #### apex/sample-reporting/pages/p00023-group-by-clause.apx
 
 1 distinct warning
 
-- **G-3180** (line 81, column 26) — target: app:SAMPLE-REPORTING/page:23/region:group-by-clause: Always specify column names instead of positional references in ORDER BY clauses
+- **G-3180** (line 81, column 26) — component: region group-by-clause; parent: page 23; parent: app SAMPLE-REPORTING; property: sqlQuery: Always specify column names instead of positional references in ORDER BY clauses
 
 #### apex/sample-reporting/pages/p00025-pivot-syntax.apx
 
 1 distinct warning
 
-- **G-3145** (line 77, column 24) — target: app:SAMPLE-REPORTING/page:25/region:pivot-query-syntax: Avoid using SELECT \* directly from a table or view
+- **G-3145** (line 77, column 24) — component: region pivot-query-syntax; parent: page 25; parent: app SAMPLE-REPORTING; property: sqlQuery: Avoid using SELECT \* directly from a table or view
 
 #### apex/sample-reporting/pages/p00027-string-functions.apx
 
 2 distinct warnings
 
-- **G-1050** (line 894, column 27) — target: app:SAMPLE-REPORTING/page:27/region:replace-query: Avoid using literals in your code
-- **G-3180** (line 1449, column 21) — target: app:SAMPLE-REPORTING/page:27/region:trim-query: Always specify column names instead of positional references in ORDER BY clauses
+- **G-1050** (line 894, column 27) — component: region replace-query; parent: page 27; parent: app SAMPLE-REPORTING; property: sqlQuery: Avoid using literals in your code
+- **G-3180** (line 1449, column 21) — component: region trim-query; parent: page 27; parent: app SAMPLE-REPORTING; property: sqlQuery: Always specify column names instead of positional references in ORDER BY clauses
 
 #### apex/sample-reporting/pages/p00030-listagg.apx
 
 1 distinct warning
 
-- **G-3130** (line 93, column 22) — target: app:SAMPLE-REPORTING/page:30/region:listagg-query-syntax: Try to use ANSI SQL-92 join syntax
+- **G-3130** (line 93, column 22) — component: region listagg-query-syntax; parent: page 30; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use ANSI SQL-92 join syntax
 
 #### apex/sample-reporting/pages/p00032-row-number.apx
 
 1 distinct warning
 
-- **G-3130** (line 95, column 22) — target: app:SAMPLE-REPORTING/page:32/region:row-number: Try to use ANSI SQL-92 join syntax
+- **G-3130** (line 95, column 22) — component: region row-number; parent: page 32; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use ANSI SQL-92 join syntax
 
 #### apex/sample-reporting/pages/p00034-application-theme-style.apx
 
 4 distinct warnings
 
-- **G-3130** (line 109, column 22) — target: app:SAMPLE-REPORTING/page:34/pageItem:P34\_DESKTOP\_THEME\_STYLE\_ID: Try to use ANSI SQL-92 join syntax
-- **G-3130** (line 139, column 22) — target: app:SAMPLE-REPORTING/page:34/pageItem:P34\_DESKTOP\_THEME\_STYLE\_ID: Try to use ANSI SQL-92 join syntax
-- **G-3130** (line 153, column 22) — target: app:SAMPLE-REPORTING/page:34/pageItem:P34\_DESKTOP\_THEME\_STYLE\_ID: Try to use ANSI SQL-92 join syntax
-- **G-4320** (line 216, column 21) — target: app:SAMPLE-REPORTING/page:34/process:set-theme-style: Always label your loops
+- **G-3130** (line 109, column 22) — component: pageItem P34\_DESKTOP\_THEME\_STYLE\_ID; parent: page 34; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use ANSI SQL-92 join syntax
+- **G-3130** (line 139, column 22) — component: pageItem P34\_DESKTOP\_THEME\_STYLE\_ID; parent: page 34; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use ANSI SQL-92 join syntax
+- **G-3130** (line 153, column 22) — component: pageItem P34\_DESKTOP\_THEME\_STYLE\_ID; parent: page 34; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use ANSI SQL-92 join syntax
+- **G-4320** (line 216, column 21) — component: process set-theme-style; parent: page 34; parent: app SAMPLE-REPORTING; property: plsqlCode: Always label your loops
 
 #### apex/sample-reporting/pages/p00035-pipelined-functions.apx
 
 5 distinct warnings
 
-- **G-4320** (line 96, column 17) — target: app:SAMPLE-REPORTING/page:35/region:package-source: Always label your loops
-- **G-1050** (line 110, column 27) — target: app:SAMPLE-REPORTING/page:35/region:package-source: Avoid using literals in your code
-- **G-4320** (line 111, column 17) — target: app:SAMPLE-REPORTING/page:35/region:package-source: Always label your loops
-- **G-1050** (line 114, column 41) — target: app:SAMPLE-REPORTING/page:35/region:package-source: Avoid using literals in your code
-- **G-3130** (line 159, column 22) — target: app:SAMPLE-REPORTING/page:35/region:pipelined-functions: Try to use ANSI SQL-92 join syntax
+- **G-4320** (line 96, column 17) — component: region package-source; parent: page 35; parent: app SAMPLE-REPORTING; property: plsqlCode: Always label your loops
+- **G-1050** (line 110, column 27) — component: region package-source; parent: page 35; parent: app SAMPLE-REPORTING; property: plsqlCode: Avoid using literals in your code
+- **G-4320** (line 111, column 17) — component: region package-source; parent: page 35; parent: app SAMPLE-REPORTING; property: plsqlCode: Always label your loops
+- **G-1050** (line 114, column 41) — component: region package-source; parent: page 35; parent: app SAMPLE-REPORTING; property: plsqlCode: Avoid using literals in your code
+- **G-3130** (line 159, column 22) — component: region pipelined-functions; parent: page 35; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use ANSI SQL-92 join syntax
 
 #### apex/sample-reporting/pages/p00038-report-from-collection.apx
 
 4 distinct warnings
 
-- **G-4320** (line 45, column 17) — target: app:SAMPLE-REPORTING/page:38/region:before-header-page-process: Always label your loops
-- **G-4320** (line 496, column 17) — target: app:SAMPLE-REPORTING/page:38/process:create-collection: Always label your loops
-- **G-1050** (line 498, column 46) — target: app:SAMPLE-REPORTING/page:38/process:create-collection: Avoid using literals in your code
-- **G-4270** (line 521, column 111) — target: app:SAMPLE-REPORTING/page:38/process:create-collection: Avoid comparing boolean values to boolean literals
+- **G-4320** (line 45, column 17) — component: region before-header-page-process; parent: page 38; parent: app SAMPLE-REPORTING; property: plsqlCode: Always label your loops
+- **G-4320** (line 496, column 17) — component: process create-collection; parent: page 38; parent: app SAMPLE-REPORTING; property: plsqlCode: Always label your loops
+- **G-1050** (line 498, column 46) — component: process create-collection; parent: page 38; parent: app SAMPLE-REPORTING; property: plsqlCode: Avoid using literals in your code
+- **G-4270** (line 521, column 111) — component: process create-collection; parent: page 38; parent: app SAMPLE-REPORTING; property: plsqlExpression: Avoid comparing boolean values to boolean literals
 
 #### apex/sample-reporting/pages/p00040-drill-down-ig.apx
 
 4 distinct warnings
 
-- **G-4220** (line 97, column 28) — target: app:SAMPLE-REPORTING/page:40/region:projects: Try to use CASE rather than DECODE
-- **G-4220** (line 98, column 28) — target: app:SAMPLE-REPORTING/page:40/region:projects: Try to use CASE rather than DECODE
-- **G-4220** (line 99, column 28) — target: app:SAMPLE-REPORTING/page:40/region:projects: Try to use CASE rather than DECODE
-- **G-4220** (line 100, column 28) — target: app:SAMPLE-REPORTING/page:40/region:projects: Try to use CASE rather than DECODE
+- **G-4220** (line 97, column 28) — component: region projects; parent: page 40; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use CASE rather than DECODE
+- **G-4220** (line 98, column 28) — component: region projects; parent: page 40; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use CASE rather than DECODE
+- **G-4220** (line 99, column 28) — component: region projects; parent: page 40; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use CASE rather than DECODE
+- **G-4220** (line 100, column 28) — component: region projects; parent: page 40; parent: app SAMPLE-REPORTING; property: sqlQuery: Try to use CASE rather than DECODE
 
 #### apex/sample-reporting/pages/p00041-cards.apx
 
-3 distinct warnings
+2 distinct warnings
 
-- **G-2190** (line 67, column 24) — target: app:SAMPLE-REPORTING/page:41/region:cards: Avoid using ROWID or UROWID.
-- **G-1050** (line 77, column 41) — target: app:SAMPLE-REPORTING/page:41/region:cards: Avoid using literals in your code
-- **APEX-005** (line 146, column 5) — target: app:SAMPLE-REPORTING/page:41/dynamicAction:refresh-on-edit: Component dynamic actions require an authorization scheme
+- **G-2190** (line 67, column 24) — component: region cards; parent: page 41; parent: app SAMPLE-REPORTING; property: sqlQuery: Avoid using ROWID or UROWID.
+- **G-1050** (line 77, column 41) — component: region cards; parent: page 41; parent: app SAMPLE-REPORTING; property: sqlQuery: Avoid using literals in your code
 
 #### apex/sample-reporting/pages/p00042-faceted-search.apx
 
 1 distinct warning
 
-- **APEX-005** (line 469, column 5) — target: app:SAMPLE-REPORTING/page:42/dynamicAction:refresh-on-edit: Component dynamic actions require an authorization scheme
-
-#### apex/sample-reporting/pages/p00101-login.apx
-
-1 distinct warning
-
-- **APEX-005** (line 121, column 5) — target: app:SAMPLE-REPORTING/page:101/dynamicAction:set-focus: Component dynamic actions require an authorization scheme
+- **APEX-005** (line 469, column 5) — component: dynamicAction refresh-on-edit; parent: page 42; parent: app SAMPLE-REPORTING: Component dynamic actions require an authorization scheme
 
 #### apex/sample-reporting/shared-components/app-processes.apx
 
 3 distinct warnings
 
-- **G-1010** (line 7, column 13) — target: app:SAMPLE-REPORTING/appProcess:trim-all-page-items: Try to label your sub blocks
-- **G-4320** (line 8, column 17) — target: app:SAMPLE-REPORTING/appProcess:trim-all-page-items: Always label your loops
-- **G-4390** (line 8, column 17) — target: app:SAMPLE-REPORTING/appProcess:trim-all-page-items: Avoid use of unreferenced FOR loop indexes
+- **G-1010** (line 7, column 13) — component: appProcess trim-all-page-items; parent: app SAMPLE-REPORTING; property: plsqlCode: Try to label your sub blocks
+- **G-4320** (line 8, column 17) — component: appProcess trim-all-page-items; parent: app SAMPLE-REPORTING; property: plsqlCode: Always label your loops
+- **G-4390** (line 8, column 17) — component: appProcess trim-all-page-items; parent: app SAMPLE-REPORTING; property: plsqlCode: Avoid use of unreferenced FOR loop indexes
+
+#### apex/sample-reporting/shared-components/plugins/region/sampleAppsFooter/plugin.apx
+
+1 distinct warning
+
+- **ERR** (line 8, column 21) — component: plugin region/sampleAppsFooter; parent: app SAMPLE-REPORTING; property: plsqlCode: Syntax error
+
+#### apex/sample-reporting/shared-components/plugins/region/sourceDisplay/plugin.apx
+
+1 distinct warning
+
+- **ERR** (line 8, column 21) — component: plugin region/sourceDisplay; parent: app SAMPLE-REPORTING; property: plsqlCode: Syntax error
 
 #### apex/sample-reporting/supporting-objects/deinstall-script.sql
 

@@ -1,0 +1,14 @@
+-- When DML export is disabled in the project.config.json 
+--   export_type != 'TABLES_DML', 
+-- filter is appended to relevant dictionary queries automatically
+
+-- When DML is enabled, 
+-- this filter column us useful to finess the export scope: e.g.
+--   export_type = 'TABLES_DML',
+--              ^^^ export DML only (and no DDL)
+
+-- When DML is enabled, you can restrict export to specified tables, e.g.:
+--   all_tables.table_name in ('EMPLOYEES','DEPARTMENTS','LOCATIONS'),
+
+-- Not implemented yet filter 
+--   employees.first_name = 'Steven', 

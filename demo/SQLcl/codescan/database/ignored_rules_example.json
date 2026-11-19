@@ -1,0 +1,20 @@
+{
+  "ignore": [
+    {
+      "ruleNo": "APEX-001"
+    },
+    {
+      "ruleNo": "G-1010",
+      "file": "pages/p00005-sales.apx",
+      "component": {
+        "type": "action",
+        "id": "native-execute-plsql-code",
+        "parent": {
+          "type": "dynamicAction",
+          "id": "gen-xaction-refresh-content"
+        }
+      },
+      "property": "plsqlCode"
+    }
+  ]
+}

@@ -14,8 +14,8 @@ Conference materials focused on Oracle SQLcl, Oracle APEX, and database delivery
 
 The repository is organized by year and by demo type:
 
-- `2025/` contains conference talk assets for SQLcl CI/CD topics
-- `2026/` contains conference talk assets for SQLcl fundamentals for APEX and PL/SQL developers
+- `2025/` contains conference talks from 2025
+- `2026/` contains conference talks from 2026
 - `demo/` contains practical scripts and project resources used in demonstrations
 
 ## Presentations
@@ -37,12 +37,11 @@ Main topic: Oracle SQLcl: The Free Tool Every PL/SQL and APEX Developer Needs
 - [APEX Alpe Adria 2026](./2026/APEX_ALPE_ADRIA_2026/)
 - [APEX World 2026](./2026/APEX_WORLD_2026/)
 - [ASCEND 2026](./2026/ASCEND_2026/)
+- [POUG 2026](./2026/POUG_2026/)
+- [UKOUG 2026](./2026/UKOUG_2026/)
 
 ## Demo Assets
 
-### SQLcl CI/CD demo movies
-
-- [2025 demo movies](./2025/Oracle's%20SQLcl%20CI_CD%20bombshell.It%20will%20forever%20change%20your%20APEX%20%26%20Database%20deployments/demo_movies/)
 
 ### Database setup scripts
 

@@ -1,0 +1,19 @@
+{
+  "ignore": [
+    {
+      "ruleNo": "APEX-005",
+      "file": "apex/sample-reporting/pages/p00041-cards.apx",
+      "component": {
+        "type": "dynamicAction",
+        "id": "refresh-on-edit"
+      },
+      "reason": "It's ok"
+    }
+,
+    {
+      "ruleNo": "APEX-005",
+      "file": "apex/sample-reporting/pages/p00101-login.apx",
+      "reason": "Just like that"
+    }
+  ]
+}

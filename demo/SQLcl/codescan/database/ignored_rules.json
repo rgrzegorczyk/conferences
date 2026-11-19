@@ -1,0 +1,12 @@
+{
+  "ignore": [
+    {
+      "ruleNo": "G-1050",
+      "file": "package_body/eba_demo_ir_pkg_package_body.sql",
+      "reason": "I don't like this rule!"
+    },
+    {
+      "ruleNo": "G-2110"
+    }
+  ]
+}
